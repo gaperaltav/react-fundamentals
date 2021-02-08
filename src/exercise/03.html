@@ -8,9 +8,17 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
   <script type="text/babel">
-    const element = <div className="container"> Hello World</div>
+
+    const className = 'container'
+    const children = 'Hello World'
+    const props = { children, className }
+    /**
+      If I add more poperties with the expression, JSX
+      will use Object.assign() in complie time
+    **/
+    const element = (<div {...props}></div>)
 
     ReactDOM.render(element, document.getElementById('root'))
-  
+
   </script>
 </body>
