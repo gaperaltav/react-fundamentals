@@ -13,10 +13,11 @@ import '../box-styles.css'
 // 🐨 add a style prop to each of them as well so their background color
 // matches what the text says it should be as well as `fontStyle: 'italic'`
 
-function Box({className, style, size, children}) {
+function Box({className = '', style, size, children}) {
+  const boxSize = size ? `box--${size}` : ''
   return (
     <div
-      className={`box box--${size} ${className}`}
+      className={`box ${className} ${boxSize}`}
       style={{fontStyle: 'italic', ...style}}
     >
       {children}
