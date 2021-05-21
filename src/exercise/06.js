@@ -78,7 +78,9 @@ function UsernameForm({onSubmitUsername}) {
 
   function onSubmitForm(event) {
     event.preventDefault()
+    onSubmitUsername(userName) 
   }
+  
   return (
     <form onSubmit={onSubmitForm}>
       <div>
