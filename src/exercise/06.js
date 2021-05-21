@@ -44,31 +44,51 @@ function UsernameForm({onSubmitUsername}) {
   // )
 
   // Extra Credit #2
+  // const [error, setError] = useState(null)
 
-  const [error, setError] = useState(null)
+  // function displayError(){
+  //   const style = { color: 'red' }
+  //   return  <p style={style} role="alert">{error}</p>
+  // }
 
-  function displayError(){
-    const style = { color: 'red' }
-    return  <p style={style} role="alert">{error}</p>
-  }
+  // function onSubmitForm(event) {
+  //   event.preventDefault()
+  // }
+
+  // function handlerUserChange(event) {
+  //   const {value} = event.target
+  //   const isValid = value === value.toLowerCase()
+
+  //   setError(isValid ? null : 'Username must be lower case')
+  // }
+
+  // return (
+  //   <form onSubmit={onSubmitForm}>
+  //     <div>
+  //       <label htmlFor="username">Username:</label>
+  //       <input id="username" type="text" onChange={handlerUserChange} />
+  //       {error && displayError()}
+  //     </div>
+  //     <button type="submit">Submit</button>
+  //   </form>
+  // )
+
+  //Extra credit no.3
+  const [userName, setUserName] = useState('')
 
   function onSubmitForm(event) {
     event.preventDefault()
   }
-
-  function handlerUserChange(event) {
-    const {value} = event.target
-    const isValid = value === value.toLowerCase()
-  
-    setError(isValid ? null : 'Username must be lower case')   
-  }
-
   return (
     <form onSubmit={onSubmitForm}>
       <div>
         <label htmlFor="username">Username:</label>
-        <input id="username" type="text" onChange={handlerUserChange} />
-        {error && displayError()}
+        <input
+          id="username"
+          type="text"
+          onChange={(event) => setUserName(event.target.value.toLowerCase())}
+          value={userName}
+        />
       </div>
       <button type="submit">Submit</button>
     </form>
