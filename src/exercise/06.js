@@ -80,6 +80,11 @@ function UsernameForm({onSubmitUsername}) {
     event.preventDefault()
     onSubmitUsername(userName) 
   }
+
+  function userNameChangeHandler (event) {
+    const { value } = event.target
+    setUserName(value.toLowerCase())
+  }
   
   return (
     <form onSubmit={onSubmitForm}>
@@ -88,7 +93,7 @@ function UsernameForm({onSubmitUsername}) {
         <input
           id="username"
           type="text"
-          onChange={(event) => setUserName(event.target.value.toLowerCase())}
+          onChange={userNameChangeHandler}
           value={userName}
         />
       </div>
