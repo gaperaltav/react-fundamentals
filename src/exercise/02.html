@@ -19,12 +19,13 @@
       children: 'World'
     })
 
-    const containerElement = React.createElement('div', {
-      className: 'container'
-    },
-      helloSpan,
-      worldSpan
-    );
+      const containerElement = React.createElement(
+        'div',
+        { className: 'container'},
+        helloSpan,
+        ' ',
+        worldSpan
+      );
 
     root.render(containerElement);
   </script>
