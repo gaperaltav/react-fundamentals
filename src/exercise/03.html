@@ -8,14 +8,14 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
   <script type="text/babel">
-    const className = 'container';
-    const children = 'Hello World!';
-    const props = { className, children }
+    const className = 'container'
+    const children = 'Hello World!'
+    const props = {className, children}
 
-    const Element = <div { ...props } />;
+    const Element = <div {...props} />
 
     const rootElement = document.getElementById('root')
 
-    ReactDOM.createRoot(rootElement).render(Element);
+    ReactDOM.createRoot(rootElement).render(Element)
   </script>
 </body>

@@ -6,27 +6,26 @@
   <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
 
-
   <script type="module">
-    const rootElement = document.getElementById('root');
-    const root = ReactDOM.createRoot(rootElement);
+    const rootElement = document.getElementById('root')
+    const root = ReactDOM.createRoot(rootElement)
 
     const helloSpan = React.createElement('span', {
-      children: 'Hello'
+      children: 'Hello',
     })
 
     const worldSpan = React.createElement('span', {
-      children: 'World'
+      children: 'World',
     })
 
-      const containerElement = React.createElement(
-        'div',
-        { className: 'container'},
-        helloSpan,
-        ' ',
-        worldSpan
-      );
+    const containerElement = React.createElement(
+      'div',
+      {className: 'container'},
+      helloSpan,
+      ' ',
+      worldSpan,
+    )
 
-    root.render(containerElement);
+    root.render(containerElement)
   </script>
 </body>

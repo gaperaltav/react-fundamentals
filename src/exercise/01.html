@@ -20,27 +20,25 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script type="module">
-        const rootElement = document.createElement('div');
-        rootElement.setAttribute('id', 'root');
+      const rootElement = document.createElement('div')
+      rootElement.setAttribute('id', 'root')
 
-        document.body.appendChild(rootElement);
+      document.body.appendChild(rootElement)
 
-        const newDivElement = document.createElement('div');
-        newDivElement.textContent = 'Hello World';
-        newDivElement.className = 'container';
+      const newDivElement = document.createElement('div')
+      newDivElement.textContent = 'Hello World'
+      newDivElement.className = 'container'
 
-        rootElement.append(newDivElement);
+      rootElement.append(newDivElement)
     </script>
-</body>
-
+  </body>
 </html>
