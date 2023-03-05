@@ -7,16 +7,39 @@
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
-    function Message({ children }) {
-      return <div className="message">{children}</div>
+    function Message({ greeting, subject }) {
+      return (
+        <div className="message">
+          {greeting}, {subject}
+        </div>
+      )
+    }
+
+    const PropTypesCustom = {
+      string(props, propName, componentName) {
+        if (typeof props[propName] !== 'string') {
+          return new Error(`${componentName} Component -> The "${propName}" should be a string.`);
+        }
+      }
+    }
+
+    Message.propTypes = {
+      greeting: PropTypesCustom.string,
+      subject: PropTypesCustom.string
     }
 
     const element = (
       <div className="container">
-        <Message>Hello World </Message>
-        <Message>Goodbye World</Message>
+        <Message
+          greeting={'Hello'}
+          subject={'World'}
+        />
+        <Message
+          greeting={'Goodbye'}
+          subject={'World'}
+        />
       </div>
-    )
+    );
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     ReactDOM.createRoot(document.getElementById('root')).render(element)
